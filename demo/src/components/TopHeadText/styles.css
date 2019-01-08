@@ -1,0 +1,16 @@
+.TopHeadText {
+  a {
+    color: #fe5d75;
+  }
+
+  code.inline {
+    color: #fe5d75;
+    font-weight: bold;
+    background: #ececec;
+    padding: 0 4px;
+  }
+
+  .CodeMirror {
+    height: auto;
+  }
+}

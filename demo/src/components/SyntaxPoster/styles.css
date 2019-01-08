@@ -1,0 +1,12 @@
+.SyntaxPoster {
+  display: block;
+  padding: 40px 0;
+  > code {
+    display: table;
+    margin: 0 auto;
+    font-size: 62px;
+    font-weight: 700;
+    color: #ff3c59;
+    font-family: sans-serif;
+  }
+}

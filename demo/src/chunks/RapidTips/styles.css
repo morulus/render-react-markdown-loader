@@ -1,0 +1,17 @@
+.CodeBlock {
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+.RapidTips {
+  code {
+    background-color: #ffffff;
+    color: #ff3c59;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin: 0 2px 2px 0;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

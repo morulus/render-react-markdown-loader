@@ -1,0 +1,56 @@
+.IntroTextCodeExample {
+  font-size: 18px;
+  max-width: 500px;
+  box-shadow: -4px 4px 11px #0000000d;
+
+  .CodeMirror {
+    height: auto;
+    border: 1px #c1c1c1 solid;
+    padding: 10px;
+  }
+}
+
+/* neo theme for codemirror */
+
+/* Color scheme */
+
+.cm-s-example.CodeMirror {
+  background-color:#ffffff;
+  color:#2e383c;
+  line-height:1.4375;
+}
+.cm-s-example .cm-comment { color:#c50521; }
+.cm-s-example .cm-keyword, .cm-s-example .cm-property { color:#C792EA; }
+.cm-s-example .cm-atom,.cm-s-example .cm-number { color:#75438a; }
+.cm-s-example .cm-node,.cm-s-example .cm-tag { color:#9c3328; }
+.cm-s-example .cm-string { color:#e334ff; }
+.cm-s-example .cm-string-2 { color:#a725f3; }
+.cm-s-example .cm-variable,.cm-s-example .cm-qualifier { color:#a725f3; }
+
+
+/* Editor styling */
+
+.cm-s-example pre {
+  padding:0;
+}
+
+.cm-s-example .CodeMirror-gutters {
+  border:none;
+  border-right:10px solid transparent;
+  background-color:transparent;
+}
+
+.cm-s-example .CodeMirror-linenumber {
+  padding:0;
+  color:#e0e2e5;
+}
+
+.cm-s-example .CodeMirror-guttermarker { color: #e8546a; }
+.cm-s-example .CodeMirror-guttermarker-subtle { color: #e0e2e5; }
+
+.cm-s-example .CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: rgba(155,157,162,0.37);
+  z-index: 1;
+}

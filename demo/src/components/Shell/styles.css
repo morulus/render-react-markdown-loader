@@ -1,0 +1,11 @@
+.Shell {
+  display: block;
+
+  > code {
+    background-color: #353434;
+    color: #e6f9f0;
+    padding: 20px;
+    display: block;
+    font-size: 18px;
+  }
+}
