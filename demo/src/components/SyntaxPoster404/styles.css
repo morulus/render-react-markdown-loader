@@ -1,0 +1,46 @@
+.SyntaxPosterContainer {
+  color: white;
+}
+
+.SyntaxPoster {
+  display: block;
+  padding: 120px 0 60px;
+  > code {
+    display: table;
+    margin: 0 auto;
+    font-size: 102px;
+    font-weight: 700;
+    color: #ff3c59;
+    font-family: sans-serif;
+  }
+}
+
+.Footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0 40px;
+
+  summary {
+    max-width: 504px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  > a {
+    cursor: pointer;
+    outline: none;
+    > button {
+      cursor: pointer;
+      outline: none;
+      padding: 10px 20px;
+      font-size: 24px;
+      border: 0;
+      background-color: #ff3c59;
+      color: white;
+      border-radius: 12px;
+    }
+  }
+}

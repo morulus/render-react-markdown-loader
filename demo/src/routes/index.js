@@ -7,11 +7,14 @@ import {
 import IndexPage from "./IndexPage";
 import Playground from "./Playground";
 import Docs from "./Docs";
+import Page404 from "./Page404";
+
+console.log("process.env.PUBLIC_URL", process.env.PUBLIC_URL);
 
 export default () => (
   <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Switch>
-      <Route path="/" exact>
+      <Route exact path="/">
         <IndexPage />
       </Route>
       <Route path="/tryit">
@@ -19,6 +22,9 @@ export default () => (
       </Route>
       <Route path="/docs">
         <Docs />
+      </Route>
+      <Route>
+        <Page404 />
       </Route>
     </Switch>
   </BrowserRouter>
