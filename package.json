@@ -1,6 +1,6 @@
 {
   "name": "render-react-markdown-loader",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0",
   "description": "Extends the base markdown syntax with the ability to render React modules described in code block",
   "main": "lib/index.js",
   "scripts": {
