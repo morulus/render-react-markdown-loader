@@ -35,7 +35,7 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
     "start-prod": "NODE_ENV=production webpack-dev-server",
-    "build": "NODE_ENV=production PUBLIC_URL=/render-react-markdown-loader/ webpack"
+    "build": "NODE_ENV=production PUBLIC_URL=/render-react-markdown-loader/ webpack && cp ./public/404.html ./dist/404.html"
   },
   "homepage": "https://morulus.github.io/render-react-markdown-loader"
 }
