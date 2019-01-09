@@ -1,1 +1,1 @@
-This text provided from another markdown document
+This text provided by another markdown document

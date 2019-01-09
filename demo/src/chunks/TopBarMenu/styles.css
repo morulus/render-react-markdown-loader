@@ -1,0 +1,24 @@
+.TopBarMenu {
+  margin-left: auto;
+  height: 100%;
+
+  > ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    margin: 0 -6px;
+
+    > li {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 0 6px;
+
+      > a {
+        color: white;
+        white-space: pre;
+      }
+    }
+  }
+}

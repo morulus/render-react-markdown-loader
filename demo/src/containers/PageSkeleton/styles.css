@@ -1,0 +1,33 @@
+.Container {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vw - 77px);
+  flex-direction: column;
+
+  &.fixed {
+    position: fixed;
+    height: 100vh;
+  }
+
+  .Header {
+    display: flex;
+    align-items: center;
+    background-color: #23393e;
+    color: white;
+    padding: 10px 20px;
+    min-height: 57px;
+    padding-right: 72px;
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 100;
+      color: #fff;
+
+      > i {
+        color: #ff5d75;
+        font-style: normal;
+      }
+    }
+  }
+}

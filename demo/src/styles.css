@@ -10,112 +10,6 @@ body {
   }
 }
 
-.Container {
-  display: flex;
-  flex-direction: column;
-
-  .Header {
-    display: flex;
-    align-items: center;
-    background-color: #2c1e63;
-    color: white;
-    padding: 10px 20px;
-
-    h1 {
-      margin: 0;
-      font-size: 32px;
-      font-weight: 100;
-      color: #fff;
-
-      > i {
-        color: #ff5d75;
-        font-style: normal;
-      }
-    }
-  }
-
-  .Contents {
-    padding: 10px 30px;
-    box-sizing: border-box;
-
-    h1,
-    h2,
-    h3 {
-      color: #593ebb;
-    }
-  }
-
-  div.Intro {
-    padding: 40px 0;
-    font-size: 21px;
-    box-sizing: border-box;
-    justify-content: space-between;
-  }
-}
-
-.Footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 0 40px;
-
-  summary {
-    max-width: 400px;
-    margin-bottom: 20px;
-  }
-
-  > a {
-    cursor: pointer;
-    outline: none;
-    > button {
-      cursor: pointer;
-      outline: none;
-      padding: 10px 20px;
-      font-size: 24px;
-      border: 0;
-      background-color: #ff3c59;
-      color: white;
-      border-radius: 12px;
-    }
-  }
-}
-
-.Demo {
-  width: 100%;
-  min-height: 100%;
-  display: flex;
-  padding-bottom: 50px;
-  margin: 0 -20px;
-
-  > * {
-    padding: 0 20px;
-  }
-
-  div.Content {
-    width: 50%;
-    box-sizing: border-box;
-
-    > div {
-      width: 100%;
-    }
-  }
-
-  div.Code {
-    width: 50%;
-    box-sizing: border-box;
-    font-size: 16px;
-
-    > div {
-      border: 1px gray solid;
-    }
-
-    .CodeMirror {
-      height: 600px;
-    }
-  }
-}
-
 .Error {
   margin-top: 6px;
   color: red;
@@ -150,27 +44,20 @@ body {
   }
 }
 
-.Playground {
-  background-color: #2c1d64;
+.Contents {
+  padding: 10px 30px;
+  box-sizing: border-box;
 
   h1,
   h2,
-  h3,
-  h4 {
-    color: white !important;
+  h3 {
+    color: #593ebb;
   }
+}
 
-  .Whiteboard {
-    background-color: white;
-    overflow: scroll;
-    max-height: 600px;
-    padding: 10px 20px;
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      color: black !important;
-    }
-  }
+div.Intro {
+  padding: 40px 0;
+  font-size: 21px;
+  box-sizing: border-box;
+  justify-content: space-between;
 }

@@ -1,10 +1,16 @@
-import Doc from './example/index.md'
-import docRaw from '!raw-loader!./example/index.md'
-import Demo from './Demo';
-import React from 'react'
-import ReactDom from 'react-dom'
+/* global document */
+import React from "react";
+import ReactDom from "react-dom";
+import Entry from "routes";
+import "./styles.css";
+import "github-markdown-css/github-markdown.css";
+import "codemirror/lib/codemirror.css";
+import "codemirror/theme/neo.css";
+import "codemirror/theme/shadowfox.css";
+import "codemirror/mode/jsx/jsx";
+import "codemirror/mode/markdown/markdown";
 
 ReactDom.render(
-  <Demo source={docRaw} Doc={Doc} />,
-  document.getElementById('root')
-)
+  <Entry />,
+  document.getElementById("root")
+);

@@ -10,7 +10,7 @@ Simple render
 import React from 'react'
 
 export default () => (
-  <textarea />
+  <textarea>Hello, world434324</textarea>
 )
 ```
 
@@ -38,7 +38,7 @@ export default () => (
 Import local modules
 --
 
-Also you can import or re-export any local module
+Also you can import or re-export some local module
 
 ```js{render}
 export { default } from './example.js'
@@ -51,12 +51,15 @@ Import another markdown file
 export { default } from './sub.md'
 ```
 
-Render coffee script
+Other languages
 --
+
+You can configure support for other languages.
+Here's Coffee script example.
 
 ```coffee{render}
 React = require 'react'
-helloWorld = -> React.createElement('b', null, 'Hello World!')
+helloWorld = -> React.createElement('b', null, 'Hello Coffee!')
 
 
 module.exports = helloWorld
