@@ -266,9 +266,13 @@ module.exports = function markdownFeatReact(content) {
             Element = React.createElement(Element, props);
           }
 
-          if (__REACT_IN_MARKDOWN__API.reactMarkdownConfig.renderers.chunk) {
+          const Chunk = props.markdown
+            && props.markdown.renderers
+            && props.markdown.renderers.chunk || __REACT_IN_MARKDOWN__API.reactMarkdownConfig.renderers.chunk;
+
+          if (Chunk) {
             return React.createElement(
-              __REACT_IN_MARKDOWN__API.reactMarkdownConfig.renderers.chunk,
+              Chunk,
               props,
               Element
             )
@@ -313,8 +317,15 @@ module.exports = function markdownFeatReact(content) {
             if (!props.value) {
               return React.createElement('code', props);
             }
+
+            /* A special case is renderers.code. Because of renderers.code
+             * overriden by internal * mechanism of code block rendering,
+             * user code component should be getting separately */
+            const codeRenderer = userProps.markdown
+              && userProps.markdown.renderers
+              && userProps.markdown.renderers.code || __REACT_IN_MARKDOWN__API.reactMarkdownConfig.renderers.code;
             return React.createElement(
-              __REACT_IN_MARKDOWN__API.reactMarkdownConfig.renderers.code,
+              codeRenderer,
               props,
               props.children
             )
@@ -337,6 +348,9 @@ module.exports = function markdownFeatReact(content) {
           }
         }
         render() {
+          const userRenderers = this.props.userProps.markdown
+          && this.props.userProps.markdown.renderers || {}
+
           return React.createElement(
             __REACT_IN_MARKDOWN__API.ReactMarkdown,
             Object.assign(
@@ -345,6 +359,7 @@ module.exports = function markdownFeatReact(content) {
               {
                 renderers: Object.assign(
                   {},
+                  userRenderers,
                   __REACT_IN_MARKDOWN__API.reactMarkdownConfig.renderers,
                   {
                     code: this.codeRenderer,
