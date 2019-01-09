@@ -9,7 +9,7 @@ import Playground from "./Playground";
 import Docs from "./Docs";
 
 export default () => (
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Switch>
       <Route path="/" exact>
         <IndexPage />

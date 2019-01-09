@@ -5,6 +5,7 @@ const webpack = require("webpack");
 const rrmOptions = require("./render-react-markdown.config.js");
 
 const mode = process.env.NODE_ENV || "development";
+const publicUrl = process.env.PUBLIC_URL || "";
 
 /*
  * walkAst: (ast, meta) => {
@@ -96,7 +97,8 @@ module.exports = {
       template: path.join(__dirname, "public/index.html")
     }),
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(mode)
+      "process.env.NODE_ENV": JSON.stringify(mode),
+      "process.env.PUBLIC_URL": JSON.stringify(publicUrl)
     })
   ],
   mode,
