@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d lib",
     "prepublish": "npm run build",
-    "deploy": "cd demo && yarn install && yarn run build && cd .. && gh-pages -d demo/dist"
+    "deploy": "cd demo && yarn install && yarn run build && cd .. && gh-pages -d demo/dist",
+    "deploy-only": "gh-pages -d demo/dist"
   },
   "keywords": [
     "babel",
