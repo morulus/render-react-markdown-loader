@@ -1,9 +1,11 @@
 render-react-markdown-loader
 ==
 
+> Now it powered by @babel/preset-env and @babel/preset-react
+
 The [Webpack](https://webpack.js.org) loader to transform markdown document into the React component.
 
-It extends the standart markdown syntax with few features. Mainly, the ability to render React modules, that described directly in the markdown code blocks.
+It extends the standart markdown syntax with a few features. Mainly, it's the ability to render React modules directly from markdown code blocks.
 
 ![dsdas](./assets/render-react-markdown-loader-demo.png)
 

@@ -211,7 +211,7 @@ You should specify the absolute path to javascript file, which contains React ma
 }
 ```
 
-And here is sample of `react-markdown.config.js`:
+And here is the sample of `react-markdown.config.js`:
 
 ```js
 module.exports = {
@@ -232,6 +232,27 @@ module.exports = {
 ```
 
 See [React markdown's documentation](https://github.com/rexxars/react-markdown#options) to get more.
+
+### Configrate babel
+
+> Alpha functionality from version 2.0
+
+To customize babel config you can pass it to property `babelConfig`. This property ay work as function also as whole config.
+
+```js
+{
+  test: /\.md$/,
+  exclude: /node_modules/,
+  use: {
+    loader: 'render-react-markdown-loader',
+    options: {
+      babelConfig  : config => {
+        ...config
+      },
+    },
+  }
+}
+```
 
 ### Customize renderers at runtime
 

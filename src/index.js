@@ -1,7 +1,7 @@
 const unified = require(`unified`)
 const parse = require(`remark-parse`)
 const astToMarkdown = require(`remark-stringify`)
-const babel = require(`babel-standalone`)
+const babel = require(`@babel/core`)
 const loaderUtils = require(`loader-utils`)
 const beautify = require('js-beautify').js
 
@@ -26,7 +26,7 @@ function flatArray(arr) {
   }, [])
 }
 
-const PACAKGE_NAME = `react-feat-markdown-loader`
+const PACAKGE_NAME = `render-markdown-react-loader`
 
 const parser = unified().use(parse, { commonmark: true })
 
@@ -47,6 +47,16 @@ function defaultRenderer(ast) {
   ); }`
 }
 
+const defaultBabelConfig = {
+  presets: [[
+    '@babel/preset-env',
+    {
+      "targets": "> 0.25%, not dead"
+    }
+  ], "@babel/preset-react"],
+  plugins: [],
+}
+
 module.exports = function markdownFeatReact(content) {
     const evalChunks = []
     const codechunks = []
@@ -60,17 +70,19 @@ module.exports = function markdownFeatReact(content) {
       renderer,
       debug,
       walkAst,
-      babelrc
+      babelrc = false,
+      babelConfig
     } = query
+
+    const finalBabelConfig = typeof babelConfig === "function"
+      ? babelConfig(defaultBabelConfig)
+      : (babelConfig || defaultBabelConfig)
 
     /* Babel repl */
       const repl = (code) => babel.transform(code, {
-        presets: ['es2015'],
-        plugins: [
-          require(`babel-plugin-transform-react-jsx`),
-        ],
+        ...finalBabelConfig,
         ast       : false,
-        babelrc   : false,
+        babelrc   : babelrc,
         comments  : false,
         compact   : true,
         filename  : `md.chunk.js`,
