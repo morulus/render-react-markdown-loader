@@ -30,7 +30,7 @@ const PACAKGE_NAME = `render-markdown-react-loader`
 
 const parser = unified().use(parse, { commonmark: true })
 
-const RENDER_JSX_LANG_MASK = /^([a-z0-9]+){(\+)?render(\+)?}/
+const RENDER_JS_LANG_MASK = /^([a-z0-9]+){(\+)?render(\+)?}/
 const INJECT_REACT_COMPONENT_LANG = `inject:eval:chunk`
 
 function defaultRenderer(ast) {
@@ -105,9 +105,9 @@ module.exports = function markdownFeatReact(content) {
 
     /* Extract JSX Component (should start with `<`) */
     function extractJsxComponent(item) {
-      if (item.type === `code` && RENDER_JSX_LANG_MASK.test(item.lang)) {
+      if (item.type === `code` && RENDER_JS_LANG_MASK.test(item.lang)) {
           // Detect the plus (+) character
-          const match = item.lang.match(RENDER_JSX_LANG_MASK);
+          const match = item.lang.match(RENDER_JS_LANG_MASK);
           const lang = match[1];
           const plus = !!(match[2] || match[3]);
           const code = item.value.trim();
